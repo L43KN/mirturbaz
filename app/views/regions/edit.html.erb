@@ -4,7 +4,12 @@
 
 <br>
 
+<p>Country ID / Country Name</p>
+<% @countries.each do |country| %>
+  <p><%= country.id %> / <%= country.name %></p>
+<% end %>
+
 <div>
-  <%= link_to "Show this region", @region %> |
-  <%= link_to "Back to regions", regions_path %>
+  <%= link_to "Show this region", @region, class: "btn btn-secondary"%>
+  <%= link_to "Back to regions", regions_path, class: "btn btn-dark"%>
 </div>

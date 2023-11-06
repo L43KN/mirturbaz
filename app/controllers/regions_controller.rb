@@ -8,15 +8,18 @@ class RegionsController < ApplicationController
 
   # GET /regions/1 or /regions/1.json
   def show
+    @cities = Region.find(params[:id]).cities
   end
 
   # GET /regions/new
   def new
     @region = Region.new
+    @countries = Country.all
   end
 
   # GET /regions/1/edit
   def edit
+    @countries = Country.all
   end
 
   # POST /regions or /regions.json
