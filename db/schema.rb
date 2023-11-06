@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_06_175618) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_06_181022) do
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.integer "country_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_regions_on_country_id"
+  end
+
+  add_foreign_key "regions", "countries"
 end
