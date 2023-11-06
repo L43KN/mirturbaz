@@ -5,5 +5,14 @@ class CreateCountries < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
+
+    require 'faker'
+    10.times do
+      name = Faker::Address.country
+      countries = Country.new(
+        name: name
+      )
+      countries.save
+    end
   end
 end
