@@ -1,10 +1,37 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @camp %>
+<%#= render @camp %>
 
-<div>
-  <%= link_to "Edit this camp", edit_camp_path(@camp) %> |
-  <%= link_to "Back to camps", camps_path %>
+<div class="jumbotron">
+<hr class="my-4">
 
-  <%= button_to "Destroy this camp", @camp, method: :delete %>
+<h1 class="display-4"><%= @camp.name %></h1>
+<p class="lead">Camp</p>
+
+<hr class="my-4">
+
+<h2><%= @camp.city_id %></h2>
+<p class="lead">City ID</p>
+
+<hr class="my-4">
+
+<p>Available actions:</p>
+<%= link_to "Edit this camp", edit_camp_path(@camp),  class: "btn btn-secondary" %>
+<br>
+<br>
+<%= button_to "Destroy this camp", @camp, method: :delete, class: "btn btn-danger" %>
+
+<hr class="my-4">
 </div>
+
+<%= link_to "Back to camps", root_path, class: "btn btn-dark" %>
+
+
+
+
+
+
+
+
+
+

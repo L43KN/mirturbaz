@@ -4,7 +4,13 @@
 
 <br>
 
+<p>City ID / City Name</p>
+<% @cities.each do |city| %>
+  <p><%= city.id %> / <%= city.name %></p>
+<% end %>
+
+
 <div>
-  <%= link_to "Show this camp", @camp %> |
-  <%= link_to "Back to camps", camps_path %>
+  <%= link_to "Show this camp", @camp, class: "btn btn-secondary" %>
+  <%= link_to "Back to camps", root_path, class: "btn btn-dark" %>
 </div>
