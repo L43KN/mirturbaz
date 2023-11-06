@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :camps
   resources :cities
   resources :regions
   resources :countries
