@@ -1,10 +1,31 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @country %>
+<%#= render @country %>
 
-<div>
-  <%= link_to "Edit this country", edit_country_path(@country) %> |
-  <%= link_to "Back to countries", countries_path %>
+<div class="jumbotron">
+  <hr class="my-4">
 
-  <%= button_to "Destroy this country", @country, method: :delete %>
+  <h1 class="display-4"><%= @country.name %></h1>
+
+  <p class="lead">Country</p>
+
+  <hr class="my-4">
+
+  <p>Available actions:</p>
+  <%= link_to "Edit this country", edit_country_path(@country),  class: "btn btn-secondary" %>
+  <br>
+  <br>
+  <%= button_to "Destroy this country", @country, method: :delete, class: "btn btn-danger" %>
+
+  <hr class="my-4">
+
+  <p>Regions of Country:</p>
+  <% @regions.each do |region| %>
+    <p><%= link_to region.name, region, class: "link-info link-underline-opacity-0" %></p>
+  <% end %>
+
+  <hr class="my-4">
 </div>
+
+<br>
+<%= link_to "Back to countries", countries_path, class: "btn btn-dark" %>

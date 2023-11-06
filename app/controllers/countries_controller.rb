@@ -8,6 +8,7 @@ class CountriesController < ApplicationController
 
   # GET /countries/1 or /countries/1.json
   def show
+    @regions = Country.find(params[:id]).regions
   end
 
   # GET /countries/new

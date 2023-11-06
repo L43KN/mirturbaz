@@ -2,13 +2,32 @@
 
 <h1>Countries</h1>
 
+<%= link_to "New country", new_country_path, class: "btn btn-secondary" %>
+
 <div id="countries">
-  <% @countries.each do |country| %>
-    <%= render country %>
-    <p>
-      <%= link_to "Show this country", country %>
-    </p>
-  <% end %>
+
+  <%#= render country %>
+  <table class="table table-striped table table-hover table-bordered">
+    <thead>
+    <tr>
+      <th scope="col" class="table-dark">ID</th>
+      <th scope="col" class="table-dark">Name</th>
+      <th scope="col" class="table-dark">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @countries.each do |country| %>
+      <tr>
+        <td><%= country.id %></td>
+        <td><%= country.name %></td>
+        <td><%= link_to "Show this country", country, class: "link-info link-underline-opacity-0" %></td>
+      </tr>
+    <% end %>
+    </tbody>
+
+  </table>
 </div>
 
-<%= link_to "New country", new_country_path %>
+
+
+
